@@ -8,6 +8,18 @@ Please use the accompanying the [YouTube Crash Course video](https://www.youtube
 
 > **Note**: This branch contains the **final working implementation** code. For the starting code, please check out the `lesson-start` branch.
 
+## 🔨 Builder Pack
+
+For those looking to dive deeper into ADK development, I've created an optional Builder Pack that includes:
+
+- Complete source code for host agent and worker agents
+- Cheat sheets for ADK development and A2A patterns
+- .cursor/rules for consistent prompt engineering
+- Comprehensive pytest test suite
+- Full Lesson Plan
+
+You can get the Builder Pack at [chongdashu.gumroad.com/l/adk-builder-pack-1](https://chongdashu.gumroad.com/l/adk-builder-pack-1).
+
 ## ☕ Support the Project
 
 If you find this tutorial series and codebase helpful in your AI agent development journey, consider buying me a coffee! Your support helps me create more educational content on AI and agent development.
