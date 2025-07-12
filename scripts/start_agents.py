@@ -55,7 +55,7 @@ AGENT_CONFIGS: Dict[str, Dict[str, Any]] = {
         "module": "host_agent",
         "port": 8001,
         "host": "localhost",
-        "env_var": None,  # No direct API key needed
+        "env_var": "GOOGLE_API_KEY",  # Host agent uses Google API key for Gemini
     },
 }
 

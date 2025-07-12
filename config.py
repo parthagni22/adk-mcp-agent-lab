@@ -26,4 +26,4 @@ NOTION_MCP_REFERENCE: Final[str] = "notionApi"
 ELEVENLABS_MCP_REFERENCE: Final[str] = "elevenLabsApi"
 
 # ADK Configuration
-ADK_MODEL: Final[str] = os.getenv("ADK_MODEL", "gemini-2.0-flash") 
+ADK_MODEL: Final[str] = os.getenv("ADK_MODEL", "gemini-2.0-flash")

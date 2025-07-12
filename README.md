@@ -1,6 +1,6 @@
-# ADK A2A Notion-ElevenLabs Integration
+# ADK A2A Notion-ElevenLabs Integration (Gemini Edition)
 
-This project demonstrates a multi-agent system using Google's Agent Development Kit (ADK) that integrates Notion for information retrieval and ElevenLabs for text-to-speech conversion.
+This project demonstrates a multi-agent system using Google's Agent Development Kit (ADK) that integrates Notion for information retrieval and ElevenLabs for text-to-speech conversion, powered by Google's Gemini models.
 
 The system demonstrates a fully decoupled Agent-to-Agent (A2A) architecture.
 
@@ -46,6 +46,7 @@ Refer to `LESSON.md` for a detailed architectural breakdown and design decisions
 - Python 3.13+
 - Notion account and API key
 - ElevenLabs account and API key
+- **Google API key** (for Gemini models)
 - `uv` package manager (recommended) or pip
 
 ## Project Structure
@@ -119,9 +120,9 @@ adk-a2a-mcp/
     The `.env` file should contain:
 
     ```env
+    GOOGLE_API_KEY="your_google_api_key_here"
     NOTION_API_KEY="your_notion_api_key_here"
     ELEVENLABS_API_KEY="your_elevenlabs_api_key_here"
-    ANTHROPIC_API_KEY="your_anthropic_api_key_here" # Required for some agents
 
     # A2A Service URLs (defaults)
     HOST_AGENT_A2A_URL="http://localhost:8001"
@@ -200,6 +201,16 @@ To run tests for a specific agent:
 ```bash
 pytest -v tests/test_notion_agent.py
 ```
+
+## Key Changes for Gemini
+
+This version has been updated to use Google's Gemini models instead of Claude/Anthropic:
+
+- **ElevenLabs Agent**: Now uses `gemini/gemini-2.0-flash` via LiteLLM
+- **Host Agent**: Uses `gemini/gemini-2.0-flash` for orchestration
+- **Notion Agent**: Uses `gemini-2.0-flash` directly
+- **Environment**: Only requires `GOOGLE_API_KEY` instead of `ANTHROPIC_API_KEY`
+- **Configuration**: Updated to use Google API keys throughout
 
 ## Development Workflow
 

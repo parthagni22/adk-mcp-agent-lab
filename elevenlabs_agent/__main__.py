@@ -42,10 +42,17 @@ logger = logging.getLogger(__name__)
     help="Port for the ElevenLabs agent server.",
 )
 def main(host: str, port: int) -> None:
+    # Check for required API keys
     if not os.getenv("ELEVENLABS_API_KEY"):
         logger.warning(
             "ELEVENLABS_API_KEY environment variable not set. "
             "The ElevenLabs MCP server might fail to authenticate."
+        )
+    
+    if not os.getenv("GOOGLE_API_KEY"):
+        logger.warning(
+            "GOOGLE_API_KEY environment variable not set. "
+            "The ElevenLabs agent might fail to initialize."
         )
 
     eleven_skill = AgentSkill(
